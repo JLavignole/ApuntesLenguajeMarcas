@@ -1,46 +1,96 @@
-# ApuntesLenguajeMarcas
-En este github se podrá encontrar apuntes sobre el propio Github,  lenguaje HTML
+# Apuntes Lenguaje de Marcas
 
-## Apuntes de GitHub y sus Comandos en el CMD
+En este repositorio encontrarás apuntes relacionados con GitHub, Git y también sobre HTML (Lenguaje de Marcas).
+
+---
+
+## Apuntes de GitHub y comandos Git en la terminal (CMD)
+
+---
 
 ### Crear un Repositorio en GitHub
 
-1. Crear una cuenta en GitHub
-2. Crear un nuevo Repositorio:
-   - Haz clic en el botón "New" o "Nuevo" en tu página de inicio de GitHub.
-   - Asigna un nombre a tu repositorio
-   - Decide si el repositorio será público o privado.
-   - Puedes agregar un archivo README para describir tu proyecto.
+1. Crear una cuenta en [GitHub](https://github.com)
+2. Crear un nuevo repositorio:
+   - Haz clic en el botón "New" o "Nuevo".
+   - Asigna un nombre a tu repositorio.
+   - Elige si será público o privado.
+   - (Opcional) Agrega un archivo README.
    - Haz clic en "Create repository".
 
-### Comandos básicos de Git en CMD
+---
 
-1. **Configuración inicial:**
-   - `git config --global user.name`
-   - `git config --global user.email`
+### Configuración Inicial
 
-2. **Inicializar un repositorio**
-   - `git init`
+```bash
+git config --global user.name "TuNombre"
+```
+> Configura tu nombre de usuario global para que Git lo use en todos tus commits.
 
-3. **Clonar un repositorio**
-   - `git clone https://github.com/usuario/nombre-del-repositorio.git`
+```bash
+git config --global user.email "tucorreo@ejemplo.com"
+```
+> Configura el correo electrónico asociado a tu cuenta de GitHub.
 
-4. **Gestionar cambios**
-   - `git add archivo.txt` — Añadir un archivo específico
-   - `git add .` — Añadir todos los archivos
-   - `git commit -m "Mensaje descriptivo del commit"`
-   - `git push origin main`
-   - `git branch nombre-de-rama`
-   - `git pull`
+---
+
+### Inicializar un Repositorio
+
+```bash
+git init
+```
+> Crea un nuevo repositorio Git en el directorio actual. Útil para comenzar a versionar un proyecto desde cero.
+
+---
+
+### Clonar un Repositorio Existente
+
+```bash
+git clone https://github.com/usuario/nombre-del-repositorio.git
+```
+> Descarga una copia local de un repositorio remoto.
+
+---
+
+### Gestión de Cambios
+
+```bash
+git add archivo.txt
+```
+> Añade un archivo específico al área de preparación (staging area) para ser incluido en el próximo commit.
+
+```bash
+git add .
+```
+> Añade **todos los archivos modificados o nuevos** al staging area.
+
+```bash
+git commit -m "Mensaje descriptivo del commit"
+```
+> Registra los cambios añadidos al staging area en el historial del proyecto. El mensaje debe describir brevemente lo que hiciste.
+
+```bash
+git push origin main
+```
+> Envía tus commits locales al repositorio remoto, específicamente a la rama `main`.
+
+```bash
+git pull
+```
+> Descarga y fusiona los cambios más recientes del repositorio remoto en tu rama actual.
+
+```bash
+git branch nombre-de-rama
+```
+> Crea una nueva rama con el nombre especificado. Útil para trabajar en funcionalidades sin afectar la rama principal (`main`).
 
 ---
 
 ## Lenguaje Markdown
 
-- Para escribir código se usan tres comillas invertidas (\`\`\`)
+- Para escribir código se usan tres comillas invertidas (```)
 
 ### Encabezados
-
 ```markdown
 # Encabezado 1
 ## Encabezado 2
@@ -48,7 +98,6 @@ En este github se podrá encontrar apuntes sobre el propio Github,  lenguaje HTM
 ```
 
 ### Énfasis
-
 ```markdown
 *Itálica* o _Itálica_
 **Negrita** o __Negrita__
@@ -56,36 +105,29 @@ En este github se podrá encontrar apuntes sobre el propio Github,  lenguaje HTM
 ```
 
 ### Listas
-
 - **Listas no ordenadas:**
-
 ```markdown
 - Elemento 1
 - Elemento 2
   - Sub Elemento
 ```
-
 - **Listas ordenadas:**
-
 ```markdown
 1. Primer ítem
 2. Segundo ítem
 ```
 
 ### Links
-
 ```markdown
 [NombreLink](LinkURL "Título opcional")
 ```
 
 ### Imágenes
-
 ```markdown
 ![NombreImagen](LinkImagen "Título opcional")
 ```
 
 ### Tablas
-
 ```markdown
 | **Titulo 1** | **Titulo 2** | **Titulo 3** |
 |:------------:|--------------:|:-------------|
@@ -96,74 +138,88 @@ En este github se podrá encontrar apuntes sobre el propio Github,  lenguaje HTM
 ## Conceptos HTML
 
 ### Estructura básica de un HTML
+La estructura básica de un documento HTML está compuesta por:
 
-- El `head` contiene el título de la página.
-- El `body` contiene el contenido visible en el navegador.
+- `<!DOCTYPE html>`: Define que el documento es HTML5.
+- `<html>`: Raíz del documento HTML.
+- `<head>`: Contiene metadatos como el título, codificación, enlaces a estilos, scripts, etc.
+- `<body>`: Contiene todo el contenido visible que el navegador mostrará.
+
+Ejemplo:
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi página</title>
+</head>
+<body>
+  <!-- Contenido visible -->
+</body>
+</html>
+```
 
 ### Etiquetas comunes
-
-- **Encabezados (`h1`-`h6`)**  
-  Cambian de tamaño según el número.
-
-- **Párrafos (`<p>`)**  
-  Se usan para escribir texto común.
-
-- **Enlaces (`<a>`)**  
-  Sirven para enlazar con otras páginas.
-
-- **Imágenes (`<img>`)**  
-  Muestran una imagen en la web.
-
-- **Listas**
-  - `ul`: Lista no ordenada.
-  - `ol`: Lista ordenada.
+- **Encabezados (`<h1>` a `<h6>`)**: Títulos jerárquicos.
+- **Párrafos (`<p>`)**: Para texto general.
+- **Enlaces (`<a>`)**: Para redirigir a otras páginas.
+- **Imágenes (`<img>`)**: Muestra imágenes en la web.
+- **Listas**:
+  - `<ul>`: Lista no ordenada.
+  - `<ol>`: Lista ordenada.
+  - `<li>`: Elemento de lista.
 
 ### Formularios
-
-- Permiten a los usuarios introducir y enviar datos mediante inputs, selects, etc.
+Permiten a los usuarios enviar datos al servidor.
+```html
+<form action="/enviar" method="POST">
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" name="nombre" required>
+  <input type="submit" value="Enviar">
+</form>
+```
 
 ### Comentarios
-
-- No se muestran en el navegador.
+No visibles en el navegador.
 ```html
 <!-- Esto es un comentario -->
 ```
 
 ### Estilizar texto
+- **Negrita**: `<b>` o `<strong>`
+- **Itálica**: `<i>` o `<em>`
+- **Subrayado**: `<u>` o `<ins>`
+- **Resaltado**: `<mark>Texto</mark>`
 
-- **Negrita**  
-  `<b>Texto</b>` o `<strong>Texto</strong>`
+---
 
-- **Itálica**  
-  `<i>Texto</i>` o `<em>Texto</em>`
+## Atributos en HTML
 
-- **Subrayado**  
-  `<u>Texto</u>` o `<ins>Texto</ins>`
+- **id**: Identificador único del elemento.
+- **class**: Clase para aplicar estilos CSS.
+- **src**: Fuente de la imagen o script.
+- **href**: Dirección a la que apunta un enlace.
+- **alt**: Texto alternativo para imágenes.
+- **value**: Valor de un campo.
+- **placeholder**: Texto de ayuda en un input.
+- **required**: Campo obligatorio.
 
-- **Resaltado**  
-  `<mark>Texto</mark>`
-  
-## Formularios HTML
+### Tipos de rutas
 
-Los formularios permiten recolectar información del usuario a través de campos interactivos.
-
-### Estructura Básica
-
+- **Ruta absoluta**: Incluye dominio completo.
 ```html
-<form action="/enviar" method="POST">
-  <label for="nombre">Nombre:</label>
-  <input type="text" id="nombre" name="nombre" required>
-
-  <label for="email">Email:</label>
-  <input type="email" id="email" name="email" required>
-
-  <input type="submit" value="Enviar">
-</form>
+<a href="https://ejemplo.com">Enlace externo</a>
+```
+- **Ruta relativa**: Basada en la ubicación del archivo actual.
+```html
+<a href="/carpeta/pagina.html">Interna</a>
 ```
 
-### Tipos de Campos Comunes
+---
 
-- `text`, `textarea`, `email`, `password`, `number`, `date`, `file`, `checkbox`, `radio`, `select`, `submit`, `button`.
+## Campos comunes en formularios
+- `text`, `email`, `password`, `number`, `date`, `file`, `checkbox`, `radio`, `submit`, `button`, `select`, `textarea`
 
 ```html
 <select name="pais">
@@ -176,7 +232,7 @@ Los formularios permiten recolectar información del usuario a través de campos
 
 ## CSS (Cascading Style Sheets)
 
-Permite aplicar estilos visuales a los elementos HTML.
+Permite aplicar estilos visuales a los elementos HTML y separar el contenido de su presentación.
 
 ### Sintaxis Básica
 
@@ -202,29 +258,40 @@ input[type="text"] {
 
 ### Selectores útiles
 
-- `#id` — selecciona por ID
-- `.clase` — selecciona por clase
-- `elemento` — selecciona por etiqueta
-- `div > p` — hijo directo
-- `a:hover` — pseudoclase
+- `#id` — selecciona un elemento por su atributo `id`
+- `.clase` — selecciona todos los elementos con la clase especificada
+- `elemento` — selecciona todos los elementos de ese tipo
+- `div > p` — selecciona párrafos que sean hijos directos de un `div`
+- `a:hover` — aplica estilo cuando el cursor pasa sobre un enlace (pseudoclase)
 
 ### Aplicación del CSS
 
-- **Inline**: `<p style="color:red">Texto</p>`
-- **Interno**: dentro de `<style>` en HTML
-- **Externo**: enlazado con `<link rel="stylesheet" href="estilos.css">`
+- **Inline**: Estilo aplicado directamente al elemento  
+  ```html
+  <p style="color:red">Texto</p>
+  ```
+- **Interno**: Dentro de una etiqueta `<style>` en el `<head>` del HTML  
+  ```html
+  <style>
+    body { background-color: lightblue; }
+  </style>
+  ```
+- **Externo**: En un archivo separado `.css` enlazado con  
+  ```html
+  <link rel="stylesheet" href="estilos.css">
+  ```
 
 ---
 
 ## Diseño Responsive
 
-Hace que el diseño se adapte a diferentes dispositivos y tamaños de pantalla.
+Hace que el diseño se adapte a diferentes dispositivos y tamaños de pantalla, mejorando la experiencia del usuario.
 
 ### Recomendaciones
 
-- Usa **unidades relativas**: `%`, `em`, `rem`
-- Aplica **media queries** para adaptar estilos
-- Usa diseño flexible con **Flexbox** o **Grid**
+- Usa **unidades relativas** como `%`, `em`, `rem` para mejor escalado
+- Aplica **media queries** para cambiar estilos según el tamaño de pantalla
+- Usa sistemas de diseño flexibles como **Flexbox** y **Grid**
 
 ### Ejemplo con Media Query
 
@@ -260,11 +327,18 @@ body {
 
 ## Sesiones en Aplicaciones Web
 
-Las sesiones permiten guardar información del usuario entre páginas o durante su visita.
+Las sesiones permiten guardar información del usuario entre páginas durante su navegación, como su nombre, rol o estado de inicio de sesión.
 
 ### ¿Qué es una sesión?
 
-Una sesión almacena datos temporales para un usuario, como si ha iniciado sesión, su carrito de compras, etc.
+Una sesión es un espacio de almacenamiento temporal en el servidor que contiene datos específicos del usuario mientras navega por un sitio web.
+
+### ¿Para qué se usan?
+
+- Autenticación de usuarios (login/logout)
+- Mostrar contenido personalizado
+- Proteger rutas restringidas
+- Guardar datos como un carrito de compras
 
 ### Ejemplo en PHP
 
@@ -283,8 +357,4 @@ session_destroy();
 ?>
 ```
 
-### Uso común
-
-- Autenticación de usuarios
-- Mostrar contenido personalizado
-- Proteger rutas restringidas
+> Nota: `session_start()` debe ejecutarse siempre antes de cualquier salida HTML para que funcione correctamente.
